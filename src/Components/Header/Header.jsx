@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="flex fixed bg-black text-white bg-opacity-50 flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7">
+    <header className="flex fixed bg-black text-white bg-opacity-50 flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-3">
       <nav className="relative container w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-6  mx-auto">
         <div className="md:col-span-3">
           {/* <!-- Logo --> */}
