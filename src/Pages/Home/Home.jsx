@@ -3,6 +3,7 @@ import Banner from "../../Components/Home/Banner/Banner";
 import ItemSlider from "../../Components/Home/Swiper/ItemSlider";
 import PopularMenu from "../../Components/Home/PopularMenu/PopularMenu";
 import ChefRecomands from "../../Components/Home/ChefRecomands/ChefRecomands";
+import FromOurMenu from "../../Components/Home/FromOurMenu/FromOurMenu";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <ItemSlider></ItemSlider>
       <PopularMenu></PopularMenu>
       <ChefRecomands></ChefRecomands>
+      <FromOurMenu></FromOurMenu>
     </div>
   );
 }
