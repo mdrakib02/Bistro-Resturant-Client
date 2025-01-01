@@ -3,12 +3,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import slideimg1 from "../../assets/home/slide1.jpg";
-import slideimg2 from "../../assets/home/slide2.jpg";
-import slideimg3 from "../../assets/home/slide3.jpg";
-import slideimg4 from "../../assets/home/slide4.jpg";
-import slideimg5 from "../../assets/home/slide5.jpg";
-import SectionsTitle from "../SectionTitle/SectionsTitle";
+// import slideimg1 from "../../assets/home/slide1.jpg";
+import slideimg1 from "../../../assets/home/slide1.jpg"
+import slideimg2 from "../../../assets/home/slide2.jpg"
+import slideimg3 from "../../../assets/home/slide3.jpg"
+import slideimg4 from "../../../assets/home/slide4.jpg"
+import slideimg5 from "../../../assets/home/slide5.jpg"
+
+import SectionsTitle from "../../SectionTitle/SectionsTitle";
+
 
 export default function ItemSlider() {
   return (
