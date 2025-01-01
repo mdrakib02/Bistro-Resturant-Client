@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="flex bg-black text-white opacity-60 flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7">
-      <nav className="relative max-w-7xl w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-6  mx-auto">
+    <header className="flex fixed bg-black text-white bg-opacity-50 flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7">
+      <nav className="relative container w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-6  mx-auto">
         <div className="md:col-span-3">
           {/* <!-- Logo --> */}
           <NavLink
@@ -21,7 +21,7 @@ export default function Header() {
           <NavLink to="/signin">
             <button
               type="button"
-              className="py-2 px-3 inline-flex uppercase items-center gap-x-2 text-sm font-medium rounded-xl bg-white border border-gray-200  text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-white/10 dark:text-white dark:hover:text-white dark:focus:text-white"
+              className="py-2 px-3 inline-flex uppercase  items-center gap-x-2 text-sm font-medium rounded-xl bg-white border border-gray-200  text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-white/10 dark:text-white dark:hover:text-white dark:focus:text-white"
             >
               Sign in
             </button>
