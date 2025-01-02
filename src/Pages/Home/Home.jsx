@@ -7,6 +7,7 @@ import FromOurMenu from "../../Components/Home/FromOurMenu/FromOurMenu";
 import { Helmet } from "react-helmet-async";
 import Cover from "../../Components/Cover/Cover";
 import menuImg from "../../assets/menu/pizza-bg.jpg";
+import Testimonial from "../../Components/Home/Testimonial/Testimonial";
 export default function Home() {
   return (
     <div>
@@ -25,6 +26,7 @@ export default function Home() {
       <PopularMenu></PopularMenu>
       <ChefRecomands></ChefRecomands>
       <FromOurMenu></FromOurMenu>
+      <Testimonial></Testimonial>
     </div>
   );
 }
