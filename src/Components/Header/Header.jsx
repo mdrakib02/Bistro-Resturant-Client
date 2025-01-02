@@ -99,12 +99,14 @@ export default function Header() {
               </a>
             </div>
             <div>
-              <a
-                className="inline-block uppercase text-white hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
-                href="#"
-              >
-                Our Menu
-              </a>
+              <NavLink to="our-menu">
+                <a
+                  className="inline-block uppercase text-white hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
+                  href="#"
+                >
+                  Our Menu
+                </a>
+              </NavLink>
             </div>
             <div>
               <a
