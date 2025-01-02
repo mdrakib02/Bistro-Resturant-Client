@@ -11,10 +11,10 @@ export default function Cover({ img, title, subtitle }) {
     >
       <div className="hero min-h-[560px]">
         <div className=" "></div>
-        <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-xl bg-opacity-40 hero-overlay px-8 py-6">
+        <div className="hero-content text-white text-center">
+          <div className="max-w-2xl  hero-overlay px-8 py-6">
             <h1 className="mb-5 text-5xl font-bold">{title}</h1>
-            <p className="mb-5">{subtitle}</p>
+            <p className="mb-5 text-white">{subtitle}</p>
           </div>
         </div>
       </div>
