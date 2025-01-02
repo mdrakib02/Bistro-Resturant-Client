@@ -38,22 +38,26 @@ export default function OurMenu() {
       <MenuCategory items={offered}></MenuCategory>
       <MenuCategory
         items={dessert}
-        title={"Desert Menu"}
+        title={"desert"}
+        categories={"desert"}
         coverimg={desertImg}
       ></MenuCategory>
       <MenuCategory
         items={salad}
-        title={"Salad Menu"}
+        title={"salad"}
+        categories={"salad"}
         coverimg={saladImg}
       ></MenuCategory>
       <MenuCategory
         items={soup}
-        title={"soup Menu"}
+        title={"soup"}
+        categories={"soup"}
         coverimg={soupImg}
       ></MenuCategory>
       <MenuCategory
         items={pizza}
-        title={"pizza Menu"}
+        title={"pizza"}
+        categories={"pizza"}
         coverimg={pizzaImg}
       ></MenuCategory>
       <div></div>
