@@ -18,7 +18,7 @@ export default function OrderMenuCArd({item}) {
             <h2 className="card-title justify-center">{name}</h2>
             <p>{recipe}</p>
             <div className="card-actions justify-center">
-              <button className="btn btn-outline border-b-4 uppercase">
+              <button className="btn btn-outline border-b-4 bg-slate-200 border-orange-400 uppercase">
                 Add To Card
               </button>
             </div>
