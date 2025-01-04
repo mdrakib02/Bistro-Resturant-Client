@@ -3,6 +3,8 @@ import MainLayout from "../Layouts/MainLayout";
 import Home from "../Pages/Home/Home";
 import OurMenu from "../Pages/Menu/OurMenu";
 import OrderFood from "../Pages/Order/OrderFood";
+import Login from "../Pages/Authentication/Login";
+import SignUp from "../Pages/Authentication/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -10,21 +12,28 @@ const router = createBrowserRouter([
     element: <MainLayout></MainLayout>,
     errorElement: <h1>Error </h1>,
     children: [
-
       {
         path: "/",
-        element: <Home/>
+        element: <Home />,
       },
       {
         path: "/our-menu",
-        element: <OurMenu></OurMenu>
+        element: <OurMenu></OurMenu>,
       },
       {
         path: "/order/:category",
-        element: <OrderFood></OrderFood>
-      }
-    ]
+        element: <OrderFood></OrderFood>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
+      },
+    ],
   },
 ]);
 
-export default router
+export default router;

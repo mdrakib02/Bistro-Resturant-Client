@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function OrderMenuCArd({item}) {
-    const { image, name, recipe, price } = item;
+export default function OrderMenuCArd({ item }) {
+  const { image, name, recipe, price } = item;
   return (
     <div>
       {" "}
@@ -16,7 +16,7 @@ export default function OrderMenuCArd({item}) {
           </figure>
           <div className="card-body text-center">
             <h2 className="card-title justify-center">{name}</h2>
-            <p>{recipe}</p>
+            <p>{recipe.split(" ").slice(0, 15).join(" ")}...</p>
             <div className="card-actions justify-center">
               <button className="btn btn-outline border-b-4 bg-slate-200 border-orange-400 uppercase">
                 Add To Card
