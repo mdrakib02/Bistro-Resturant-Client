@@ -1,28 +1,52 @@
-import React from "react";
 import Cover from "../../Components/Cover/Cover";
 import imggg from "../../assets/menu/pizza-bg.jpg";
 import { FaGooglePlusG } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import AuthContext from "../../Provider/Authcontext";
+import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
+import toast from "react-hot-toast";
 
 export default function SignUp() {
+  const axiosPublic = UseAxiosPublic();
+  const { createUser, handleupdateProfile, signInWithGoogle } =
+    useContext(AuthContext);
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    createUser(data.email, data.password).then((result) => {
+      const logUser = result.user;
+      console.log(logUser);
+      handleupdateProfile(data.name, data.photoURL)
+        .then(() => {
+          const userInfo = {
+            name: data.name,
+            email: data.email,
+          };
+          axiosPublic.post("/user", userInfo).then((result) => {
+            if (result.data.insertedId) {
+              console.log("user added to the database");
+              reset();
+              toast.success("user added to the database");
+            }
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
+  };
   console.log(watch("name"));
 
-  // const handleForm = (e) => {
-  //   e.preventDefault();
-  //   const form = e.target;
-  //   const name = form.name.value;
-  //   const email = form.email.value;
-  //   const photo = form.photo.value;
-  //   const password = form.password.value;
-  //   console.log({ name, email, photo, password });
-  // };
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+  };
   return (
     <section>
       <Cover img={imggg}></Cover>
@@ -128,7 +152,11 @@ export default function SignUp() {
             <button className="btn btn-primary w-full">Register</button>
           </div>
           <div className="form-control">
-            <button type="button" className="btn btn-outline btn-error w-full">
+            <button
+              onClick={handleGoogleSignIn}
+              type="button"
+              className="btn btn-outline btn-error w-full"
+            >
               Login with Google <FaGooglePlusG />
             </button>
           </div>

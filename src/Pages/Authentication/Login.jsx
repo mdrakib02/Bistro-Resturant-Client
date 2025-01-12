@@ -1,13 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
   validateCaptcha,
 } from "react-simple-captcha";
+import AuthContext from "../../Provider/Authcontext";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const { signIn } = useContext(AuthContext);
   const captchaRef = useRef(null);
   const [disabled, setDisabled] = useState(true);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
 
   useEffect(() => {
     loadCaptchaEnginge(6);
@@ -18,6 +24,14 @@ export default function Login() {
     const email = form.email.value;
     const password = form.password.value;
     console.log({ email, password });
+
+    signIn(email, password)
+      .then((result) => {
+        const logUser = result.user;
+        console.log(logUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => console.log(error));
   };
   const handleValidationCaptcha = (e) => {
     e.preventDefault();
@@ -26,7 +40,7 @@ export default function Login() {
     if (validateCaptcha(userCaptchaValue)) {
       setDisabled(false);
       captchaRef.current.value(" ");
-      return
+      return;
     } else {
       return setDisabled(true);
     }

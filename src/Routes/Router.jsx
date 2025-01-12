@@ -5,6 +5,10 @@ import OurMenu from "../Pages/Menu/OurMenu";
 import OrderFood from "../Pages/Order/OrderFood";
 import Login from "../Pages/Authentication/Login";
 import SignUp from "../Pages/Authentication/SignUp";
+import PrivateRoutes from "./PrivateRoutes";
+import Secrates from "../Components/Secrates";
+import Deshbord from "../Pages/Deshbord/Deshbord";
+import Cart from "../Pages/Deshbord/Cart";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +35,28 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/secrates",
+        element: (
+          <PrivateRoutes>
+            <Secrates></Secrates>
+          </PrivateRoutes>
+        ),
+      },
+    ],
+  },
+  {
+    path: "/deshbord",
+    element: (
+      <PrivateRoutes>
+        <Deshbord />
+      </PrivateRoutes>
+    ),
+    children: [
+      {
+        path: "/deshbord/cart",
+        element: <Cart />,
       },
     ],
   },
