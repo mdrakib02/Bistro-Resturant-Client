@@ -46,6 +46,20 @@ export default function SignUp() {
 
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
+    signInWithGoogle().then((result) => {
+      const userInfo = {
+        email: result.user.email,
+        name: result.user.displayName,
+      };
+      axiosPublic.post("/user", userInfo).then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          toast.success("Login successfully");
+        } else {
+          toast.error(res.data.message);
+        }
+      });
+    });
   };
   return (
     <section>

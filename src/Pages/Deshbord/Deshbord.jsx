@@ -6,10 +6,12 @@ import {
   CgList,
   CgShoppingCart,
 } from "react-icons/cg";
-import { MdReviews } from "react-icons/md";
+import { FaSitemap, FaUsers, FaUtensils } from "react-icons/fa";
+import { MdManageAccounts, MdReviews } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 
 export default function Deshbord() {
+  const isAdmin = false;
   return (
     <section className="bg-slate-200">
       <section className="container mx-auto flex">
@@ -19,6 +21,58 @@ export default function Deshbord() {
             <h2>Resturant</h2>
           </div>{" "}
           <ul className="p-3 space-y-4">
+            {isAdmin ? (
+              <></>
+            ) : (
+              <>
+                <li>
+                  <NavLink
+                    className="w-full text-right  flex gap-3 px-4 py-2 rounded-sm bg-orange-500 text-white hover:text-black hover:bg-white items-center  text-xl"
+                    to="/deshbord/admin-home"
+                  >
+                    <CgHome />
+                    Admin Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="w-full text-right  flex gap-3 px-4 py-2 rounded-sm bg-orange-500 text-white hover:text-black hover:bg-white items-center  text-xl"
+                    to="/deshbord/add-items"
+                  >
+                    <FaUtensils />
+                    Add Items
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="w-full text-right  flex gap-3 px-4 py-2 rounded-sm bg-orange-500 text-white hover:text-black hover:bg-white items-center  text-xl"
+                    to="/deshbord/manage-items"
+                  >
+                    <FaSitemap />
+                    Manage Items
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="w-full text-right  flex gap-3 px-4 py-2 rounded-sm bg-orange-500 text-white hover:text-black hover:bg-white items-center  text-xl"
+                    to="/deshbord/manage-items"
+                  >
+                    <MdManageAccounts />
+                    Manage Booking
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="w-full text-right  flex gap-3 px-4 py-2 rounded-sm bg-orange-500 text-white hover:text-black hover:bg-white items-center  text-xl"
+                    to="/deshbord/manage-items"
+                  >
+                    <FaUsers />
+                    All Users
+                  </NavLink>
+                </li>
+              </>
+            )}
+            <div className="divider"></div>
             <li>
               <NavLink
                 className="w-full text-right  flex gap-3 px-4 py-2 rounded-sm bg-orange-500 text-white hover:text-black hover:bg-white items-center  text-xl"
