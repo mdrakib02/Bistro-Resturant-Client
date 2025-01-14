@@ -55,7 +55,7 @@ export default function Deshbord() {
                 <li>
                   <NavLink
                     className="w-full text-right  flex gap-3 px-4 py-2 rounded-sm bg-orange-500 text-white hover:text-black hover:bg-white items-center  text-xl"
-                    to="/deshbord/manage-items"
+                    to="/deshbord/manage-booking"
                   >
                     <MdManageAccounts />
                     Manage Booking
@@ -64,7 +64,7 @@ export default function Deshbord() {
                 <li>
                   <NavLink
                     className="w-full text-right  flex gap-3 px-4 py-2 rounded-sm bg-orange-500 text-white hover:text-black hover:bg-white items-center  text-xl"
-                    to="/deshbord/manage-items"
+                    to="/deshbord/all-users"
                   >
                     <FaUsers />
                     All Users

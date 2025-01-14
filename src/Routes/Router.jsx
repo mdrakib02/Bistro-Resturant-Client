@@ -9,6 +9,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Secrates from "../Components/Secrates";
 import Deshbord from "../Pages/Deshbord/Deshbord";
 import Cart from "../Pages/Deshbord/Cart";
+import AllUsers from "../Pages/Deshbord/DeshbordItems/AllUsers";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
       {
         path: "/deshbord/cart",
         element: <Cart />,
+      },
+      // Admin
+      {
+        path: "/deshbord/all-users",
+        element: <AllUsers></AllUsers>,
       },
     ],
   },
